@@ -73,4 +73,11 @@ After standardisation, both features now have similar scales ranging approximate
 ---
 ## Impact of outliers
 
-- 
+-   standardisation does not impact outliers
+
+---
+## when to use Standardisation:
+
+these algorithms
+
+![alt text](<Screenshot 2025-10-23 at 2.21.49 PM.png>) 
