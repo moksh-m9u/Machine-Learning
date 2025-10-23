@@ -32,8 +32,9 @@ thus it is imp for both the feature to be in the same scale.
 
 ## Standardisation
 
-Standardisation transforms data to have mean = 0 and standard deviation = 1 using the formula:
-**Z = (X - μ) / σ**
+Standardisation transforms data to have mean = 0 and standard deviation = 1 using the formula:   
+
+**Z = (X - μ)/σ**
 
 Where:
 - Z = standardized value
@@ -60,3 +61,16 @@ Where:
 - Salary Standardized: (45000 - 85000) / 29814.24 = -1.34
 
 After standardisation, both features now have similar scales ranging approximately from -1.5 to +1.5.
+
+---
+
+## Geometric intution
+
+- Mean Centring - Basically we are trying to shift the mean to origin by standardiasation
+
+- Scaling by the factor of std deviation (ye abhi clear nahi hua muje)
+
+---
+## Impact of outliers
+
+- 
