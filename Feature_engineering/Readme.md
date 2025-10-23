@@ -1,5 +1,3 @@
-
-
 # Feature Engineering
 - Process of extracting Features from raw data using domain knowledge
 
@@ -31,6 +29,3 @@ Data processing ---> Feature engineering* ---> Algorithm
     - PCA
     - LDA
     - Tsne
-
----
-

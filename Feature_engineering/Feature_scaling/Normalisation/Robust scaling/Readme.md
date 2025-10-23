@@ -29,4 +29,4 @@ Where $Q_2$ is the median (50th percentile).
 - **Robust to outliers**: Uses median instead of mean
 - **Scale invariant**: Uses IQR instead of standard deviation
 - **Preserves the shape** of the original distribution
-- **Typical range**: Most values fall between -1 and 1, but can extend beyond
+- **Typical range**: Most values fall between -1 and 1, but can extend beyon
