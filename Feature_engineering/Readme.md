@@ -20,6 +20,7 @@ Data processing ---> Feature engineering* ---> Algorithm
         - by mean, median in case of numerical 
         - by most frequent value in case of categorical dataset
     - Handling categorical features (one hot encoding)
+    ![alt text](image.png)
     - Outliers detection
         - it is imp to remove outliers as there are few algo which are highly influenced by outliers (Linear Regression)
     - Feature scaling
