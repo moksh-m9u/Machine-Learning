@@ -8,55 +8,65 @@ Built every algorithm by hand. Verified against scikit-learn. No black boxes.
 
 ## Repository Structure
 
+### Algorithm Implementations
+
 | Folder | Category | Description |
 |---|---|---|
-| `Linear_Regression/` | Supervised | Simple and multiple linear regression, assumptions |
+| `Linear_Regression/` | Supervised | Simple and multiple linear regression, assumptions, gradient descent |
 | `Logistic Regression/` | Supervised | Perceptron trick, sigmoid, gradient descent for classification |
 | `DecisionTrees/` | Supervised | Geometric intuition, regression trees, housing price prediction |
 | `KNN/` | Supervised | From-scratch KNN, breast cancer prediction project |
 | `SVM/` | Supervised | Hard-margin SVM, kernel SVM |
 | `Random_Forest/` | Ensemble | Intro, bagging vs random forest comparison, hyperparameter tuning |
 | `Bagging/` | Ensemble | Bagging implementation and classifier experiments |
-| `GradientDescent/` | Optimization | Step-by-step GD, batch GD, SGD, multi-feature GD |
 | `Regularization/` | Optimization | Ridge regression, Lasso regression, sparsity |
-| `kmeans/` | Unsupervised | K-Means from scratch, Streamlit app demo |
 | `Markov-Chain/` | Probabilistic | Bigram text generator using Markov transition matrix |
+
+### Practice & Data Engineering
+
+These folders don't contain algorithm implementations — they cover data preprocessing, exploratory analysis, and pipeline tooling practiced alongside the core ML work.
+
+| Folder | Category | Description |
+|---|---|---|
 | `EDA/` | Data Analysis | Univariate and bivariate analysis |
 | `Feature_engineering/` | Preprocessing | Encoding, scaling, column transformers |
-| `Outliers/` | Preprocessing | Outlier detection and handling project |
+| `Outliers/` | Preprocessing | Outlier detection and handling |
 | `ML_Pipelines/` | Engineering | Sklearn pipelines applied to Titanic dataset |
 | `Pandas Profiling/` | Data Analysis | Automated EDA reports using pandas profiling |
 
 ---
 
-## What This Repository Contains
 
-### Algorithm Implementations
+## Projects
 
-Each supervised and unsupervised learning algorithm is implemented twice:
+### Mini Projects
 
-- **From scratch in Python** using NumPy and standard libraries, with the math made explicit in the code and notebooks.
-- **Using scikit-learn** run in parallel to validate correctness and compare output.
+Most algorithm folders include at least one applied notebook on a real or toy dataset:
 
-This dual approach helps develop a clear understanding of what the library abstractions are actually doing.
-
-### Projects
-
-Most algorithm folders include at least one project notebook applied to a real or toy dataset. Examples include:
-
-- Breast cancer classification using KNN (`KNN/01_BreastCancerPredictionModel.ipynb`)
-- Housing price prediction using Decision Trees (`DecisionTrees/` with `HousingData.csv`)
-- Titanic survival prediction using ML Pipelines (`ML_Pipelines/titanic.ipynb`)
-- Heart disease classification in Random Forest (`Random_Forest/` with `heart.csv`)
-- Placement outcome analysis in Outliers (`Outliers/project.ipynb`)
-
-### Extras
-
-- `kmeans/app.py` - A minimal Streamlit application that runs the from-scratch K-Means implementation interactively.
-- `Markov-Chain/Markov_NLP.ipynb` - A bigram-based Markov chain text generator built without any ML framework.
-- `ML_Pipelines/` - Demonstrates how to use `sklearn.pipeline.Pipeline` to build production-ready preprocessing and model chains, compared against a version without pipelines.
+| Project | Folder | Notebook / File |
+|---|---|---|
+| Breast cancer classification | `KNN/` | `01_BreastCancerPredictionModel.ipynb` |
+| Housing price prediction (regression trees) | `DecisionTrees/` | `02_RegressionTreesFromSCRATCH.ipynb` + `HousingData.csv` |
+| Titanic survival prediction (full pipeline) | `ML_Pipelines/` | `titanic.ipynb` |
+| Heart disease classification | `Random_Forest/` | `01_intro.ipynb` + `heart.csv` |
+| Placement outcome analysis | `Outliers/` | `project.ipynb` |
 
 ---
+
+## End-to-End: Credit Card Fraud Detection
+
+A full production-grade project built on the [ULB Credit Card Fraud dataset](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud). Covers full preprocessing, model development (Random Forest & XGBoost), hyperparameter tuning, and a production-ready FastAPI backend — containerized with Docker and deployed on Render.
+
+| Resource | Link |
+|---|---|
+| GitHub Repo | [moksh-m9u/Credit-Card-Fraud-Detection](https://github.com/moksh-m9u/Credit-Card-Fraud-Detection) |
+| Docker Image | [mokshm9u/project-server](https://hub.docker.com/r/mokshm9u/project-server) |
+| Live API (Swagger) | [credict-card-server.onrender.com/docs](https://credict-card-server.onrender.com/docs) |
+| Kaggle Dataset | [mlg-ulb/creditcardfraud](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud) |
+
+---
+
+
 
 ## Folder Breakdown
 
@@ -67,6 +77,13 @@ Four notebooks covering:
 - From-scratch implementation
 - Multiple linear regression
 - Assumptions of linear regression (linearity, homoscedasticity, normality of residuals)
+
+**Gradient Descent** (`Linear_Regression/GradientDescent/`) — Five progressive notebooks:
+1. Step-by-step gradient descent mechanics
+2. General gradient descent
+3. End-to-end GD applied to linear regression
+4. Batch gradient descent for N features
+5. Stochastic gradient descent (SGD)
 
 Datasets used: placement data, salary data, general regression data.
 
@@ -92,15 +109,6 @@ Datasets used: placement data, salary data, general regression data.
 - Hard-margin SVM derivation and implementation
 - Kernel SVM notebook (RBF and polynomial kernels)
 
-### Gradient Descent
-
-Five progressive notebooks:
-1. Step-by-step gradient descent mechanics
-2. General gradient descent
-3. End-to-end GD applied to linear regression
-4. Batch gradient descent for N features
-5. Stochastic gradient descent (SGD)
-
 ### Regularization
 
 **Ridge (L2)**
@@ -120,12 +128,6 @@ Five progressive notebooks:
 - Intro to Random Forest
 - Bagging vs Random Forest comparison
 - Hyperparameter tuning with GridSearchCV
-
-### K-Means Clustering
-
-- Full from-scratch implementation in `Kmeans.py`
-- Notebook with step-by-step walkthrough
-- `app.py` - interactive Streamlit demo
 
 ### Markov Chain
 
@@ -172,7 +174,6 @@ scikit-learn
 matplotlib
 seaborn
 jupyter
-streamlit        # for kmeans/app.py
 nltk             # for Markov-Chain
 ydata-profiling  # for Pandas Profiling
 ```
@@ -180,7 +181,7 @@ ydata-profiling  # for Pandas Profiling
 Install all dependencies:
 
 ```bash
-pip install numpy pandas scikit-learn matplotlib seaborn jupyter streamlit nltk ydata-profiling
+pip install numpy pandas scikit-learn matplotlib seaborn jupyter nltk ydata-profiling
 ```
 
 ---
@@ -191,15 +192,6 @@ pip install numpy pandas scikit-learn matplotlib seaborn jupyter streamlit nltk 
 ```bash
 jupyter notebook
 ```
-
-**K-Means Streamlit app:**
-```bash
-cd kmeans
-streamlit run app.py
-```
----
-## What's Coming
-Every algorithm in this repository is getting an end-to-end deployed project — a real-world dataset, full preprocessing pipeline, trained model exported as pipe.pkl, and a live Streamlit app. The idea is simple: understanding an algorithm is one thing, shipping it is another. Each project will be deployed on Streamlit Cloud so you can interact with it directly in the browser, no setup needed.
 
 ---
 
